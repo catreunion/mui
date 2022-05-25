@@ -1,80 +1,77 @@
 import React from "react"
-import { Stack, Button, Box } from "@mui/material"
+import { Stack, Button, IconButton } from "@mui/material"
+import DeleteIcon from "@mui/icons-material/Delete"
+import SendIcon from "@mui/icons-material/Send"
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"
+import AlarmIcon from "@mui/icons-material/Alarm"
+import Fingerprint from "@mui/icons-material/Fingerprint"
 
 const BasicButtons = () => {
   return (
     <>
       <Stack direction="row" spacing={2}>
-        <Button variant="text">Text</Button>
-        <Button variant="contained">Contained</Button>
-        <Button variant="outlined">Outlined</Button>
-      </Stack>
-
-      <Stack direction="row" spacing={2}>
-        <Button>Primary</Button>
-        <Button disabled>Disabled</Button>
-        <Button href="#text-buttons">Link</Button>
-      </Stack>
-
-      <Stack direction="row" spacing={2}>
-        <Button variant="outlined">Primary</Button>
-        <Button variant="outlined" disabled>
-          Disabled
-        </Button>
-        <Button variant="outlined" href="#outlined-buttons">
-          Link
-        </Button>
-      </Stack>
-
-      <Stack direction="row" spacing={2}>
-        <Button variant="contained">Contained</Button>
+        <Button variant="contained">1</Button>
         <Button variant="contained" disabled>
-          Disabled
+          2
         </Button>
-        <Button variant="contained" href="#contained-buttons">
-          Link
+        <Button variant="contained" href="https://google.com">
+          3
+        </Button>
+        <Button variant="contained" color="secondary">
+          4
+        </Button>
+        <Button variant="contained" color="success">
+          5
+        </Button>
+        <Button variant="contained" color="error">
+          6
         </Button>
       </Stack>
 
       <Stack direction="row" spacing={2}>
-        <Button color="secondary">Secondary</Button>
-        <Button variant="contained" color="success">
-          Success
+        <Button variant="outlined" startIcon={<DeleteIcon />}>
+          Delete
         </Button>
-        <Button variant="outlined" color="error">
-          Error
+        <Button variant="contained" endIcon={<SendIcon />}>
+          Send
         </Button>
       </Stack>
 
-      <Box sx={{ "& button": { m: 1 } }}>
-        <div>
-          <Button size="small">Small</Button>
-          <Button size="medium">Medium</Button>
-          <Button size="large">Large</Button>
-        </div>
-        <div>
-          <Button variant="outlined" size="small">
-            Small
-          </Button>
-          <Button variant="outlined" size="medium">
-            Medium
-          </Button>
-          <Button variant="outlined" size="large">
-            Large
-          </Button>
-        </div>
-        <div>
-          <Button variant="contained" size="small">
-            Small
-          </Button>
-          <Button variant="contained" size="medium">
-            Medium
-          </Button>
-          <Button variant="contained" size="large">
-            Large
-          </Button>
-        </div>
-      </Box>
+      <Stack direction="row" spacing={2}>
+        <IconButton aria-label="delete">
+          <DeleteIcon />
+        </IconButton>
+        <IconButton color="primary" aria-label="add to cart">
+          <AddShoppingCartIcon />
+        </IconButton>
+        <IconButton color="secondary" aria-label="set alarm">
+          <AlarmIcon />
+        </IconButton>
+        <IconButton disabled aria-label="delete it">
+          <DeleteIcon />
+        </IconButton>
+        <IconButton color="success" aria-label="leave a fingerprint">
+          <Fingerprint />
+        </IconButton>
+        <IconButton color="error" aria-label="leave a fingerprint">
+          <Fingerprint />
+        </IconButton>
+      </Stack>
+
+      <Stack direction="row" spacing={2} alignItems="center">
+        <IconButton size="small" aria-label="delete">
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton size="large" aria-label="delete">
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton size="small" aria-label="delete">
+          <DeleteIcon fontSize="large" />
+        </IconButton>
+        <IconButton size="large" aria-label="delete">
+          <DeleteIcon fontSize="large" />
+        </IconButton>
+      </Stack>
     </>
   )
 }

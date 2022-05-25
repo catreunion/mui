@@ -1,69 +1,37 @@
 import React from "react"
-import { Button, ButtonGroup, Box } from "@mui/material"
+import { Box, ButtonGroup, Button } from "@mui/material"
 
 const ButtonGp = () => {
-  const buttons = [<Button key="one">One</Button>, <Button key="two">Two</Button>, <Button key="three">Three</Button>]
+  const buttons = [<Button key={1}>1</Button>, <Button key={2}>2</Button>, <Button key={3}>3</Button>]
 
   return (
-    <>
-      <ButtonGroup variant="contained" aria-label="a group of 3 buttons">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        "& > *": {
+          m: 1
+        }
+      }}
+    >
+      <ButtonGroup variant="contained" size="medium" color="secondary" aria-label="a group of 3 buttons">
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup variant="contained" size="large" color="success" aria-label="a group of 3 buttons">
+        {buttons}
       </ButtonGroup>
 
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          flexDirection: "row",
           "& > *": {
             m: 1
           }
         }}
       >
-        <ButtonGroup variant="outlined" aria-label="outlined button group">
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
-        <ButtonGroup variant="text" aria-label="text button group">
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
-      </Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          "& > *": {
-            m: 1
-          }
-        }}
-      >
-        <ButtonGroup size="small" aria-label="a group of 3 buttons">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup color="secondary" aria-label="a group of 3 buttons">
-          {buttons}
-        </ButtonGroup>
-        <ButtonGroup size="large" aria-label="a group of 3 buttons">
-          {buttons}
-        </ButtonGroup>
-      </Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          "& > *": {
-            m: 1
-          }
-        }}
-      >
-        <ButtonGroup orientation="vertical" aria-label="a group of 3 buttons">
+        <ButtonGroup orientation="vertical" variant="outlined" aria-label="a group of 3 buttons">
           {buttons}
         </ButtonGroup>
         <ButtonGroup orientation="vertical" variant="contained" aria-label="a group of 3 buttons">
@@ -73,7 +41,7 @@ const ButtonGp = () => {
           {buttons}
         </ButtonGroup>
       </Box>
-    </>
+    </Box>
   )
 }
 
