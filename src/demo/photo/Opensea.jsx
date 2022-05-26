@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { NFTCard } from "./NFTCard"
+// import { NFTCard } from "./NFTCard"
 
 import CssBaseline from "@mui/material/CssBaseline"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
-import { Stack, Box, Grid } from "@mui/material"
+import { Stack, Box, Grid, ImageList, ImageListItem } from "@mui/material"
 import LoadingButton from "@mui/lab/LoadingButton"
 import SearchIcon from "@mui/icons-material/Search"
 
@@ -18,6 +18,13 @@ theme.typography.h3 = {
     fontSize: "2rem"
   }
 }
+
+// const demoImages = [
+//   {
+//     img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+//     title: "Breakfast"
+//   }
+// ]
 
 const Opensea = () => {
   const collection = "0xD2109D2E8b7EcBa9290Ef339D8cFB93b10e8ef07"
@@ -64,13 +71,21 @@ const Opensea = () => {
         </LoadingButton>
       </Stack>
 
-      <Box sx={{ p: 2 }}>
+      <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+        {NFTs.map((NFT) => (
+          <ImageListItem key={NFT.media[0].gateway}>
+            <img src={`${NFT.media[0].gateway}?w=164&h=164&fit=crop&auto=format`} srcSet={`${NFT.media[0].gateway}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`} alt={NFT.title} loading="lazy" />
+          </ImageListItem>
+        ))}
+      </ImageList>
+
+      {/* <Box sx={{ p: 2 }}>
         <Grid spacing={2} container>
           {NFTs.map((NFT) => (
             <NFTCard nft={NFT} key={NFT.media[0].gateway} />
           ))}
         </Grid>
-      </Box>
+      </Box> */}
     </ThemeProvider>
   )
 }
