@@ -22,13 +22,13 @@ const AdvButtons = () => {
   return (
     <>
       <Box>
-        <FormControlLabel
+        {/* <FormControlLabel
           sx={{
             display: "block"
           }}
           control={<Switch checked={loading} onChange={() => setLoading(!loading)} color="primary" />}
           label="loading..."
-        />
+        /> */}
 
         <Box sx={{ "& > button": { m: 1 } }}>
           <LoadingButton size="large" onClick={handleClick} loading={loading} variant="outlined" disabled>
@@ -45,7 +45,6 @@ const AdvButtons = () => {
           </LoadingButton>
         </Box>
       </Box>
-
       <Stack direction="row" alignItems="center" spacing={2}>
         <label htmlFor="contained-button-file">
           <Input accept="image/*" id="contained-button-file" multiple type="file" />
