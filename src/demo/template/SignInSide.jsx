@@ -1,19 +1,7 @@
 import React from "react"
 import { Grid, Stack, Avatar, Typography, Box, TextField, FormControlLabel, Checkbox, Button, Link } from "@mui/material"
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
-
-const Copyright = () => {
-  return (
-    <Typography sx={{ p: 2 }} variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        MUI
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  )
-}
+import Copyright from "./comp/Copyright"
 
 const SignInSide = () => {
   const handleSubmit = (e) => {

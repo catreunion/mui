@@ -10,7 +10,9 @@
 // import Album from "./demo/template/Album"
 import SignIn from "./demo/template/SignIn"
 import SignInSide from "./demo/template/SignInSide"
-import Color from "./demo/color/Color"
+// import StickyFooter from "./demo/template/StickyFooter"
+// import Pricing from "./demo/template/Pricing"
+// import Color from "./demo/color/Color"
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
       {/* <Album /> */}
       <SignIn />
       <SignInSide />
-      <Color />
+      {/* <Pricing /> */}
+      {/* <Color /> */}
     </>
   )
 }
