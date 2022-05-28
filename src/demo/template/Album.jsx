@@ -2,7 +2,7 @@ import React from "react"
 import { AppBar, Toolbar, Typography, Container, Stack, Button, Box, Grid, Card, CardMedia, CardContent, Link } from "@mui/material"
 import CameraIcon from "@mui/icons-material/PhotoCamera"
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}

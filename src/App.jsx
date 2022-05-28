@@ -6,7 +6,10 @@
 // import House from "./demo/system/House"
 // import Trend from "./demo/system/Trend"
 // import Opensea from "./demo/photo/Opensea"
-import Album from "./demo/template/Album"
+
+// import Album from "./demo/template/Album"
+import SignIn from "./demo/template/SignIn"
+import SignInSide from "./demo/template/SignInSide"
 import Color from "./demo/color/Color"
 
 function App() {
@@ -20,7 +23,9 @@ function App() {
       {/* <House /> */}
       {/* <Trend /> */}
       {/* <Opensea /> */}
-      <Album />
+      {/* <Album /> */}
+      <SignIn />
+      <SignInSide />
       <Color />
     </>
   )
