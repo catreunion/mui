@@ -15,7 +15,7 @@ const Copyright = () => {
   )
 }
 
-const SignIn = () => {
+const SignInSide = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData(e.currentTarget)
@@ -85,4 +85,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignInSide

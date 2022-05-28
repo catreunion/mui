@@ -1,5 +1,5 @@
 import React from "react"
-import { Avatar, Typography, Container, Checkbox, Button, Link, Stack, Box, TextField, FormControlLabel } from "@mui/material"
+import { Avatar, Typography, Checkbox, Button, Link, Stack, Box, TextField, FormControlLabel } from "@mui/material"
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
 
 const Copyright = () => {
@@ -26,14 +26,13 @@ const SignIn = () => {
   }
 
   return (
-    <Container maxWidth="xs">
-      <Box
+    <Box sx={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <Stack
         sx={{
-          my: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center"
+          mx: 4
         }}
+        direction="column"
+        alignItems="center"
       >
         <Avatar sx={{ bgcolor: "secondary.main" }}>
           <LockOutlinedIcon />
@@ -41,30 +40,32 @@ const SignIn = () => {
         <Typography variant="h5">Sign in</Typography>
 
         <Box component="form" onSubmit={handleSubmit} sx={{ my: 1 }} noValidate>
-          <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
+          <TextField label="Email Address" autoComplete="email" margin="normal" autoFocus required fullWidth id="email" name="email" />
 
-          <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
+          <TextField label="Password" autoComplete="current-password" margin="normal" autoFocus required fullWidth id="password" name="password" />
 
-          <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
+          <Stack sx={{ py: 2 }} direction="row" justifyContent="space-between">
+            <FormControlLabel label="Remember me" control={<Checkbox value="remember" color="primary" />} />
 
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-            Sign In
-          </Button>
+            <Button type="submit" variant="contained">
+              Sign in
+            </Button>
+          </Stack>
 
-          <Stack sx={{ py: 4 }} direction="row" justifyContent="space-around">
-            <Link href="#" variant="body2">
+          <Stack sx={{ p: 4 }} direction="row" justifyContent="space-between">
+            <Link href="#" variant="body1">
               Forgot password?
             </Link>
 
-            <Link href="#" variant="body2">
-              Sign Up
+            <Link href="#" variant="body1">
+              Sign up
             </Link>
           </Stack>
         </Box>
-      </Box>
 
-      <Copyright />
-    </Container>
+        <Copyright />
+      </Stack>
+    </Box>
   )
 }
 
