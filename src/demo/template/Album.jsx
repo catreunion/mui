@@ -82,7 +82,7 @@ const Album = () => {
           Footer
         </Typography>
         <Typography variant="subtitle1" align="center" color="text.secondary">
-          Something here to give the footer a purpose!
+          Something here to give the footer a purpose
         </Typography>
         <Copyright />
       </Box>
