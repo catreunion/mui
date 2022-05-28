@@ -3,9 +3,10 @@ import React, { useState } from "react"
 
 import CssBaseline from "@mui/material/CssBaseline"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
-import { Stack, Box, Grid, ImageList, ImageListItem } from "@mui/material"
+import { Stack, Box, Grid, ImageList, ImageListItem, ImageListItemBar, ListSubheader, IconButton } from "@mui/material"
 import LoadingButton from "@mui/lab/LoadingButton"
 import SearchIcon from "@mui/icons-material/Search"
+import InfoIcon from "@mui/icons-material/Info"
 
 const theme = createTheme()
 
@@ -25,6 +26,13 @@ theme.typography.h3 = {
 //     title: "Breakfast"
 //   }
 // ]
+
+function srcset(image, size, rows = 1, cols = 1) {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format&dpr=2 2x`
+  }
+}
 
 const Opensea = () => {
   const collection = "0xD2109D2E8b7EcBa9290Ef339D8cFB93b10e8ef07"
@@ -71,13 +79,18 @@ const Opensea = () => {
         </LoadingButton>
       </Stack>
 
-      <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+      <ImageList sx={{ width: 500, height: 450 }}>
         {NFTs.map((NFT) => (
           <ImageListItem key={NFT.media[0].gateway}>
-            <img src={`${NFT.media[0].gateway}?w=164&h=164&fit=crop&auto=format`} srcSet={`${NFT.media[0].gateway}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`} alt={NFT.title} loading="lazy" />
+            <img src={`${NFT.media[0].gateway}?w=248&fit=crop&auto=format`} srcSet={`${NFT.media[0].gateway}?w=248&fit=crop&auto=format&dpr=2 2x`} alt={NFT.title} loading="lazy" />
+            <ImageListItemBar title={NFT.title} subtitle={<span>by: {NFT.description?.substr(0, 150)}</span>} position="below" />
           </ImageListItem>
         ))}
       </ImageList>
+
+      {/* <ImageListItem key={NFT.media[0].gateway}>
+        <img src={`${NFT.media[0].gateway}?w=164&h=164&fit=crop&auto=format`} srcSet={`${NFT.media[0].gateway}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`} alt={NFT.title} loading="lazy" />
+      </ImageListItem> */}
 
       {/* <Box sx={{ p: 2 }}>
         <Grid spacing={2} container>

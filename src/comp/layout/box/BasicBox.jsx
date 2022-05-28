@@ -1,7 +1,7 @@
 import React from "react"
 import { styled } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
-import { Paper, Box, Grid, Container } from "@mui/material"
+import { Paper, Box, Grid, Container, Button } from "@mui/material"
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -27,6 +27,12 @@ const BasicBox = () => {
           }
         }}
       />
+
+      <Box component="span" sx={{ p: 2, border: "1px dashed grey" }}>
+        <Button>Save1</Button>
+      </Box>
+
+      <Button sx={{ p: 2, border: "1px dashed grey" }}>Save2</Button>
 
       <Container maxWidth="xs">
         <Box sx={{ bgcolor: "#cfe8fc", height: "10vh" }} />
