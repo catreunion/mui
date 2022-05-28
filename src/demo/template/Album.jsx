@@ -1,5 +1,5 @@
 import React from "react"
-import { AppBar, Button, Card, CardContent, CardMedia, Grid, Stack, Box, Toolbar, Typography, Container, Link } from "@mui/material"
+import { AppBar, Toolbar, Typography, Container, Stack, Button, Box, Grid, Card, CardMedia, CardContent, Link } from "@mui/material"
 import CameraIcon from "@mui/icons-material/PhotoCamera"
 
 function Copyright() {
@@ -7,7 +7,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        MUI
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -24,49 +24,47 @@ const Album = () => {
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            album name
           </Typography>
         </Toolbar>
       </AppBar>
 
       <main>
-        <Box
+        <Container
           sx={{
+            maxWidth: "xs",
             bgcolor: "background.paper",
-            pt: 8,
-            pb: 6
+            pt: 6,
+            pb: 3
           }}
         >
-          <Container maxWidth="sm">
-            <Typography variant="h2" align="center" color="text.primary" gutterBottom>
-              Album layout
-            </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don&apos;t simply skip over it entirely.
-            </Typography>
-            <Stack sx={{ pt: 4 }} direction="row" spacing={2} justifyContent="center">
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
-            </Stack>
-          </Container>
-        </Box>
+          <Typography variant="h2" align="center" color="text.primary" gutterBottom>
+            album name
+          </Typography>
+          <Typography variant="h5" align="center" color="text.secondary" paragraph>
+            make it short and sweet, but not too short so folks don simply skip over it entirely
+          </Typography>
+          <Stack sx={{ pt: 4 }} direction="row" spacing={2} justifyContent="center">
+            <Button variant="contained">Button 1</Button>
+            <Button variant="outlined">Button 2</Button>
+          </Stack>
+        </Container>
 
-        <Container sx={{ py: 8 }} maxWidth="md">
-          <Grid spacing={4} container>
+        <Box sx={{ py: 8, px: 4 }}>
+          <Grid spacing={2} container>
             {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card} xs={12} sm={6} md={4} lg={3} xl={2}>
                 <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                   <CardMedia
                     component="img"
                     sx={{
-                      // 16:9
-                      pt: "56.25%"
+                      pt: 2
                     }}
                     image="https://source.unsplash.com/random"
-                    alt="random"
+                    alt="photo"
                   />
 
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent>
                     <Typography variant="h5" gutterBottom>
                       Heading
                     </Typography>
@@ -76,14 +74,14 @@ const Album = () => {
               </Grid>
             ))}
           </Grid>
-        </Container>
+        </Box>
       </main>
 
-      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
+      <Box sx={{ bgcolor: "background.paper", p: 6 }}>
         <Typography variant="h6" align="center" gutterBottom>
           Footer
         </Typography>
-        <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
+        <Typography variant="subtitle1" align="center" color="text.secondary">
           Something here to give the footer a purpose!
         </Typography>
         <Copyright />
